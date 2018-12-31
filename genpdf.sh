@@ -1,7 +1,6 @@
 #!/bin/bash
 
 ALLTEX=`find . -name "*.tex"`
-echo $ALLTEX
 
 CWD=`pwd`
 
@@ -10,15 +9,17 @@ do
     if [ -d $file ]; then
         continue
     fi
+    echo "( @ - @ ) process   : $file"
     dir=${file%/*}
-    while [ ${file/\//a} != $file ]
-    do
-        file=${file#*/}
-    done
-    echo "( @ - @ ) enter : $dir"
+    fn=${file##*/}
+    if [ -f ${file%tex}pdf ]; then
+        echo "( @ - @ ) ${fn%tex}pdf already exists"
+        continue
+    fi
+    echo "( @ - @ ) enter dir : $dir"
     cd $dir
-    echo "( @ - @ ) xelatex : $file"
-    xelatex $file 
+    echo "( @ - @ ) xelatex   : $fn"
+    xelatex $fn 
     cd $CWD
 done
 
