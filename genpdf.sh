@@ -2,6 +2,8 @@
 
 ALLTEX=`find . -name "*.tex"`
 
+REMOVE="aux log toc synctex.gz"
+
 CWD=`pwd`
 
 for file in $ALLTEX
@@ -23,12 +25,10 @@ do
     cd $CWD
 done
 
-for file in `find . -name "*.aux"`
+for asd in $REMOVE
 do
-    rm $file
-done
-
-for file in `find . -name "*.log"`
-do
-    rm $file
+    for file in `find . -name "*.$asd"`
+    do
+        rm $file
+    done
 done
