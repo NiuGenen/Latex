@@ -1,0 +1,136 @@
+\documentclass[UTF8]{ctexart}
+
+\usepackage{bm} % \bm{x} 加粗
+\usepackage{amsmath} % \begin{aligned} 对齐公式
+
+
+\begin{document}
+
+\tableofcontents
+
+\newpage
+
+\section{普通公式}
+
+$$y_1 = x_1 + \frac{x_2}{2} + \frac{x_3}{3} + \dots + \frac{x_n}{n} = \sum_{i=1}^n \frac{x_i}{i}$$
+
+$$y_2 = x_1^1 \cdot x_2^2 \cdot x_3^3 \cdot \dots \cdot x_n^n = \prod_{i=1}^n x_i^i$$
+
+$$y_3 = x_1^1 + \sqrt{x_2} + \sqrt[3]{x_3} + \dots + \sqrt[n]{x_n} $$
+
+$$y_4 = \underbrace{x_1 + x_2 + x_3 + \dots + x_n}_{n}$$
+
+$$y_5 = \int_{0}^{1} \sqrt{1-x^2}\ dx$$
+
+$$
+y_6 = \left\{
+\begin{aligned}
+&\frac{1}{6(x+1)} & x < -1\\
+&\frac{1}{6x}  & -1 < x < 2\\
+&\frac{1}{6(x-2)} & 2 > 2
+\end{aligned}
+\right.
+$$
+
+$$
+y_6'= \left\{
+\begin{array}{cc}
+\frac{1}{6(x+1)} & x < -1\\
+\frac{1}{6x}  & -1 < x < 2\\
+\frac{1}{6(x-2)} & 2 > 2
+\end{array}
+\right.
+$$
+
+$$
+y_7 = \overline{x} = \frac{1}{n}\sum_{i=1}^n x_i
+$$
+
+\begin{eqnarray*}
+y_8 & = & \underline{-1 + 2} + \underline{-3 + 4} \\
+\ & = & 1 + 1 \\
+\ & = & 2
+\end{eqnarray*}
+
+\newpage
+
+\section{排版}
+
+这个公式$x^2+y^2=1$表示单位圆。\par
+单位圆的公式如下
+$$x^2+y^2=1$$\par
+
+公式带编号，代码内标记为 eq1
+\begin{equation}\label{eq1}
+y = x_1 + x_2
+\end{equation}\par
+
+多个公式对齐且一个编号，代码内标记为 eq2
+\begin{equation}\label{eq2}
+\begin{aligned}
+	x_2         & \leq 1\\
+	x_1 + x_2 & \leq 1\\
+	x_1 \ \ \ \ \ \ \ & \leq 1 &\\
+\end{aligned}
+\end{equation}\par
+
+多个公式对齐且分开编号，分别标记为 con1，con2，con3
+\begin{eqnarray}
+	\label{con1} x_2         & \leq 1 \\
+	\label{con2} x_1 + x_2 & \leq 1 \\
+	\label{con3} x_1 \ \ \ \ \ \ \ & \leq 1
+\end{eqnarray}\par
+
+取消编号
+\begin{equation*}
+y = x_1 + x_2
+\end{equation*}\par
+
+继续编号
+\begin{equation}
+y = x_1 + x_2
+\end{equation}\par
+
+通过标记可以直接引用到公式的自动编号，比如 (\ref{eq1})和 (\ref{con1})\par
+
+\newpage
+
+\section{多元正态分布}
+
+$$p(\bm{x})=\frac{1}{(2\pi)^{\frac{d}{2}}|\bm{\Sigma}|^{\frac{1}{2}}}exp(-\frac{1}{2}(\bm{x}-\bm{\mu})^T\bm{\Sigma}^{-1}(\bm{x}-\bm{\mu}))$$\par
+$$\overrightarrow{x} = \bm{x}=[x_1,x_2,\dots,x_d]^T \in R^d$$
+$$\overrightarrow{\mu} = \bm{\mu}=[\mu_1,\mu_2,\dots,\mu_d]^T \in R^d$$
+$$\bm{\Sigma} \in R^{d \times d}$$\par
+
+\newpage
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

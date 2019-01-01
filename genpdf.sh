@@ -2,7 +2,7 @@
 
 ALLTEX=`find . -name "*.tex"`
 
-REMOVE="aux log toc synctex.gz"
+REMOVE="aux log toc synctex.gz mp bbl top tui blg"
 
 CWD=`pwd`
 
